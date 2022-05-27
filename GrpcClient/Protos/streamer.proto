@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcChat.Protos";
+package GrpcChat;
+
+service StreamService{
+	rpc StartStreaming(stream .GrpcChat.StreamMessage) returns (stream .GrpcChat.StreamMessage);
+}
+
+
+
+
+message StreamMessage{
+	string username = 1;
+	string message = 2;
+}
